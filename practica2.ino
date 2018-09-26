@@ -23,19 +23,17 @@ void loop() {
           sonido();//suena la alarma
         }else {
           //si el iman esta lejos del reed switch
-          digitalWrite(led_verde,LOW);
-          attachInterrupt(0,sensor,FALLING);
-          LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+          attachInterrupt(0,sensor,FALLING);//Interrupcion para bajar el consumo de energia
+          LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
           detachInterrupt(1);
-          digitalWrite(led_rojo, HIGH);
-          analogWrite(alarma,LOW);
-          //LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);//entrar al modo sleep
-          
+          digitalWrite(led_verde,LOW);//apaga el led verde
+          digitalWrite(led_rojo, HIGH);//prende el led rojo 
     }
 
 }
 
 void sonido(){
+  //metodo para hacer sonar la bocina con una melodia
   for (int i = 0; i < length; i++) {
     if (notes[i] == ' ') {
       delay(beats[i] * tempo); 
@@ -49,6 +47,7 @@ void sonido(){
 }
 
 void playTone(int tone, int duration) {
+  //metodo para calcular los tonos de la melodia de la bocina
   for (long i = 0; i < duration * 1000L; i += tone * 2) {
     digitalWrite(led_verde, HIGH);//apaga el led
     digitalWrite(alarma, HIGH);
@@ -60,6 +59,7 @@ void playTone(int tone, int duration) {
 }
 
 void playNote(char note, int duration) {
+  //metodo para la secuencia de las notas de la melodia
   char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' };
   int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956 };
 
