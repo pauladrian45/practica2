@@ -17,6 +17,9 @@ void setup() {
 
 }
 void loop() {
+  attachInterrupt(0,sensor,FALLING);
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  detachInterrupt(0);
   //si el iman se acerca al reed switch
   if(digitalRead(sensor)==LOW){
           digitalWrite(led_rojo,LOW);//apaga el red rojo
