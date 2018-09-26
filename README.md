@@ -1,6 +1,8 @@
 # Practica2(Sistema notificador de llegada "Alarma de puerta")
 27 de Septiembre de 2018
+
 Sistema de alarma para una puerta utilizando Arduino
+
 Este sistema utiliza un REED Switch como sensor para activar una alarma que simula la entrada de algun individuo,
 este sensor para simular cuando el individuo se acerca, se activa con un iman y este activa la alarma y ademas una luz,
 que enciende y apaga al de ritmo de la melodia de la alarma.
