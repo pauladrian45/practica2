@@ -25,7 +25,7 @@ void loop() {
           //si el iman esta lejos del reed switch
           attachInterrupt(0,sensor,FALLING);//Interrupcion para bajar el consumo de energia
           LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
-          detachInterrupt(1);
+          detachInterrupt(0);
           digitalWrite(led_verde,LOW);//apaga el led verde
           digitalWrite(led_rojo, HIGH);//prende el led rojo 
     }
