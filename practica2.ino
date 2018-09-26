@@ -17,20 +17,19 @@ void setup() {
 
 }
 void loop() {
-  attachInterrupt(0,sensor,FALLING);
-  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
-  detachInterrupt(0);
   //si el iman se acerca al reed switch
   if(digitalRead(sensor)==LOW){
           digitalWrite(led_rojo,LOW);//apaga el red rojo
-          digitalWrite(led_verde, HIGH);//enciende el led
           sonido();//suena la alarma
         }else {
           //si el iman esta lejos del reed switch
-          //LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);//entrar al modo sleep
           digitalWrite(led_verde,LOW);
+          attachInterrupt(0,sensor,FALLING);
+          LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+          detachInterrupt(1);
           digitalWrite(led_rojo, HIGH);
           analogWrite(alarma,LOW);
+          //LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);//entrar al modo sleep
           
     }
 
@@ -51,8 +50,10 @@ void sonido(){
 
 void playTone(int tone, int duration) {
   for (long i = 0; i < duration * 1000L; i += tone * 2) {
+    digitalWrite(led_verde, HIGH);//apaga el led
     digitalWrite(alarma, HIGH);
     delayMicroseconds(tone);
+    digitalWrite(led_verde, LOW);//enciende el led
     digitalWrite(alarma, LOW);
     delayMicroseconds(tone);
   }
