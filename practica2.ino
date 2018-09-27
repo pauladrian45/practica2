@@ -14,7 +14,6 @@ void setup() {
   pinMode(led_rojo, OUTPUT);//poner el led como salida
   pinMode(alarma, OUTPUT);//poner la bocina como salida.
   Serial.begin(9600);
-
 }
 void loop() {
   //si el iman se acerca al reed switch
@@ -26,7 +25,6 @@ void loop() {
           attachInterrupt(0,sensor,FALLING);//Interrupcion para bajar el consumo de energia
           LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
           detachInterrupt(0);
-          digitalWrite(led_verde,LOW);//apaga el led verde
           digitalWrite(led_rojo, HIGH);//prende el led rojo 
     }
 
