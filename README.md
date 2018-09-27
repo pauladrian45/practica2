@@ -1,4 +1,4 @@
-Practica2 27 de Septiembre de 2018
+Practica2
 =========
 Control de llegada de individuos "Alarma de puerta"
 ---------------------------------------------------
@@ -20,3 +20,4 @@ Material Necesario
 Autor
 -----
 Paul Adrian Padilla Guerrero
+27 de Septiembre de 2018
