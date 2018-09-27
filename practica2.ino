@@ -5,25 +5,30 @@
 int length = 15; // el numero de las notas
 char notes[] = "ccggaagffeeddc "; 
 int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 };
-int tempo = 600;
+int tempo = 400;
 
 void setup() {
   pinMode(sensor, INPUT_PULLUP);//establecer el switch como entrada
   pinMode(led_verde, OUTPUT);//poner el led como salida
   pinMode(alarma, OUTPUT);//poner la bocina como salida.
+  attachInterrupt(0,sistema,FALLING);//Interrupcion para la alarma del sistema
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
   Serial.begin(9600);
 }
 void loop() {
   //si el iman se acerca al reed switch
-  attachInterrupt(0,sistema,FALLING);//Interrupcion para la alarma del sistema
-  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
   detachInterrupt(0);
+  //if(FALLING != LOW){
+    sonido();//proceso de alarma
+    attachInterrupt(0,sistema,FALLING);//Interrupcion para la alarma del sistema
+    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
+ // }
 }
 
 
 
 void sistema(){
-  sonido();//proceso de alarma
+  
 }
 
 void sonido(){
