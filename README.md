@@ -17,6 +17,10 @@ Material Necesario
 5. REED Switch
 6.BUZZER
 
+Librerias
+----------
+1. LowPower.h
+
 Autor
 -----
 Paul Adrian Padilla Guerrero
