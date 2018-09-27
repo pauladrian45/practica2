@@ -1,7 +1,7 @@
 #include "LowPower.h"
-#define led_verde 4
-#define sensor 2
-#define alarma 9
+#define led_verde 4//se define el pin 4 del Arduino para el led verde
+#define sensor 2//se define el pin 2 para el REED Switch
+#define alarma 9//se define l pin 9 para el BUZZER
 int length = 15; // el numero de las notas
 char notes[] = "ccggaagffeeddc "; 
 int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 };
@@ -32,6 +32,7 @@ void loop() {
 
 
 void sistema(){
+  //lee el REED Switch
   valor=digitalRead(sensor);
 }
 
@@ -53,10 +54,10 @@ void playTone(int tone, int duration) {
   //metodo para calcular los tonos de la melodia de la bocina
   for (long i = 0; i < duration * 1000L; i += tone * 2) {
     digitalWrite(alarma, HIGH);
-    digitalWrite(led_verde, HIGH);//apaga el led
+    digitalWrite(led_verde, HIGH);//enciende el led
     delayMicroseconds(tone);
     digitalWrite(alarma, LOW);
-    digitalWrite(led_verde, LOW);//enciende el led
+    digitalWrite(led_verde, LOW);//apaga el led
     delayMicroseconds(tone);
   }
 }
