@@ -1,6 +1,6 @@
 Practica2 
 =========
-(Sistema notificador de llegada "Alarma de puerta")
+(Control de llegada de individuos "Alarma de puerta")
 ---------------------------------------------------
 27 de Septiembre de 2018
 
@@ -19,3 +19,7 @@ Material Necesario
 4. Resistencias 220 Ohms
 5. REED Switch
 6.BUZZER
+
+Autor
+-----
+Paul Adrian Padilla Guerrero
