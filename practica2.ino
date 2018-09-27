@@ -20,7 +20,6 @@ void loop() {
   //si el iman se acerca al reed switch
   detachInterrupt(0);
   //mientras el REED Switch lea el iman la alarma estara sonando
-  valor=digitalRead(sensor);//se lee el valor que arroja el REED Switch
   while(valor==LOW){
     sonido();//proceso de alarma
     valor=digitalRead(sensor);
