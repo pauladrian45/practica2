@@ -15,7 +15,7 @@ void setup() {
 }
 void loop() {
   //si el iman se acerca al reed switch
-  attachInterrupt(0,sistema,FALLING);//Interrupcion para bajar el consumo de energia
+  attachInterrupt(0,sistema,FALLING);//Interrupcion para la alarma del sistema
   LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);//Apaga ciertas funciones del Arduino para bajar el consumo de energia
   detachInterrupt(0);
 }
