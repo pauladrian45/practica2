@@ -1,11 +1,7 @@
 Practica2 27 de Septiembre de 2018
 =========
-(Control de llegada de individuos "Alarma de puerta")
+Control de llegada de individuos "Alarma de puerta"
 ---------------------------------------------------
-
-Sistema de alarma para una puerta utilizando Arduino
-----------------------------------------------------
-
 Este sistema utiliza un REED Switch como sensor para activar una alarma que simula la entrada de algun individuo,
 este sensor para simular cuando el individuo se acerca, se activa con un iman y este activa la alarma y ademas una luz,
 que enciende y apaga al de ritmo de la melodia de la alarma.
