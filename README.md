@@ -1,4 +1,7 @@
-# Practica2(Sistema notificador de llegada "Alarma de puerta")
+Practica2 
+=========
+(Sistema notificador de llegada "Alarma de puerta")
+---------------------------------------------------
 27 de Septiembre de 2018
 
 Sistema de alarma para una puerta utilizando Arduino
